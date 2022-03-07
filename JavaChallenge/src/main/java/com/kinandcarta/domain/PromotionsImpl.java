@@ -25,7 +25,7 @@ public class PromotionsImpl implements Promotions {
                 .filter(checkoutItem -> "0001".equals(checkoutItem))
                 .count();
         if (occurrences > 1) {
-            checkoutItems.replaceAll(item -> item == "0001" ? "0004" : item);
+            checkoutItems.replaceAll(item -> item.equals("0001") ? "0004" : item);
         }
             return checkoutItems;
     }
